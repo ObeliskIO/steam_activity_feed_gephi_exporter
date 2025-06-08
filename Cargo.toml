@@ -3,4 +3,12 @@ name = "steam_activity_feed_gephi_exporter"
 version = "0.1.0"
 edition = "2021"
 
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [dependencies]
+dotenv = "0.15"
+mongodb = { version = "2.8.2", features = ["tokio-runtime"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+csv = "1.3"
+futures = "0.3" # For StreamExt trait (e.g., cursor.try_next())

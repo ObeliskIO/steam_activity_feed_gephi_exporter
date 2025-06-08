@@ -37,18 +37,15 @@ The application requires a `.env` file in the root of the project directory with
 
 ```env
 DATABASE_URL="your_database_connection_string" # e.g., "sqlite:steam_activity.db"
-STEAM_USER_ID="YOUR_STEAM_ID_64" # Your 64-bit Steam ID
 ```
 
 - **`DATABASE_URL`**: Connection string for the SQLite database where data will be stored. If the file doesn't exist, it will be created.
-- **`STEAM_USER_ID`**: The 64-bit Steam ID of the user whose activity feed and friends list you want to process.
 
 Create a `.env` file in the project root and add your specific values.
 
 Example `.env` file:
 ```
 DATABASE_URL="sqlite:steam_data.db"
-STEAM_USER_ID="76561197960287930"
 ```
 
 ## 5. Running the Exporter
@@ -80,11 +77,6 @@ This GEXF file can be directly opened in Gephi for visualization and analysis of
 Additionally, a SQLite database file (e.g., `steam_data.db`) is created or updated, storing the raw data fetched from the Steam API.
 
 ## 7. Troubleshooting
-- **Rate Limiting:** The Steam API has rate limits. If you make too many requests in a short period, you might be temporarily blocked. Wait for some time before running the exporter again. The application has some built-in delays to mitigate this, but heavy usage might still trigger limits.
-- **Incorrect Steam User ID:** Ensure the `STEAM_USER_ID` is a valid 64-bit Steam ID. You can find your 64-bit Steam ID using online tools like [SteamID Finder](https://www.steamidfinder.com/).
-- **Database Issues:**
-    - If you have problems with the database (e.g., `Error creating/opening database`), ensure the path specified in `DATABASE_URL` is writable by the application.
-    - If the database schema changes in future versions, you might need to delete the old database file to allow the application to recreate it.
 - **No Output File Generated:**
     - Check the console output for any error messages during execution.
     - Ensure the application has write permissions in the project directory to create the `.gexf` and database files.

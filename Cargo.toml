@@ -1,0 +1,6 @@
+[package]
+name = "steam_activity_feed_gephi_exporter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
